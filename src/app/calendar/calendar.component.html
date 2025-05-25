@@ -1,0 +1,27 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <h2>{{ calendarTitle }}</h2>
+  </div>
+
+  <div class="weekdays">
+    <div class="weekday">Mon</div>
+    <div class="weekday">Tue</div>
+    <div class="weekday">Wed</div>
+    <div class="weekday">Thu</div>
+    <div class="weekday">Fri</div>
+    <div class="weekday">Sat</div>
+    <div class="weekday">Sun</div>
+  </div>
+
+  <div class="calendar-grid">
+    <div *ngFor="let day of calendarDays"
+         class="calendar-day"
+         [ngClass]="{'current-month': day.isCurrentMonth, 'other-month': !day.isCurrentMonth}">
+      {{ day.date }}
+    </div>
+  </div>
+
+  <div class="calendar-actions">
+    <button class="btn btn-primary" (click)="goBackToUpload()">Upload Another File</button>
+  </div>
+</div>
